@@ -1,2 +1,2 @@
 # init.nvim
-neovim configuration
+- my personal neovim configuration
