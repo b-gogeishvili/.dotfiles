@@ -11,6 +11,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
+		"VonHeikemen/lsp-zero.nvim", branch = "v3.x"
 	},
 
 	config = function()
@@ -21,6 +22,14 @@ return {
 			{},
 			vim.lsp.protocol.make_client_capabilities(),
 			cmp_lsp.default_capabilities())
+
+		local lsp_zero = require('lsp-zero')
+
+		lsp_zero.on_attach(function(client, bufnr)
+			-- see :help lsp-zero-keybindings
+			-- to learn the available actions
+			lsp_zero.default_keymaps({buffer = bufnr})
+		end)
 
 		require("fidget").setup({})
 		require("mason").setup()
