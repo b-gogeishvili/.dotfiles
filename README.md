@@ -1,2 +1,5 @@
-# init.nvim
-- my personal neovim configuration
+# dotfiles
+- configuration files
+- ...
+
+### Work is in progress..
