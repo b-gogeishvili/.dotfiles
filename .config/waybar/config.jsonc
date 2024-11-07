@@ -11,6 +11,7 @@
     "power-profiles-daemon",
     "backlight",
     "hyprland/language",
+    "custom/vpn",
     "custom/separator",
     "hyprland/workspaces",
     "custom/separator", 
@@ -96,6 +97,17 @@
     "format-en": "en",
     "format-ka": "ge"
   },
+
+  "custom/vpn": {
+    "format": "{icon}",
+    "format-icons": {
+        "default": "󰅟 "
+    },
+    "exec": "~/.scripts/toggle_vpn.rb exec",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "~/.scripts/toggle_vpn.rb toggle"
+  },
   /*--------*/
  
 
@@ -175,6 +187,7 @@
   "upower": {
      "icon-size": 20,
      "hide-if-empty": true,
+     "interval": 10,
      "tooltip": true,
      "tooltip-spacing": 20,
      "tooltip-format": " {time}",

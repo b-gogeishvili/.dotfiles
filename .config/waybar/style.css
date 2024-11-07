@@ -39,6 +39,19 @@
 
 #language {
     color: #b7bdf8;
+    margin-right: 12px;
+}
+
+#custom-vpn {
+    font-size: 20px;
+}
+
+#custom-vpn.inactive {
+    color: #ed8796;
+}
+
+#custom-vpn.active {
+    color: #a6da95;
 }
 /*--------*/
 
@@ -88,8 +101,8 @@
 
 /* Volume */
 #pulseaudio {
-    color: #f0c6c6;
-    margin-right: 16px;
+    color: #f2d5cf;
+    margin-right: 22px;
 }
 /*--------*/
 
@@ -145,5 +158,5 @@
 
 #custom-powermenu {
     color: #d20f39;
-    margin-right: 4px;
+    margin-right: 12px;
 }
