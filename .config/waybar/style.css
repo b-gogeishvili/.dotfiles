@@ -1,70 +1,149 @@
+/* Global */
 * {
-  font-family: "Jetbrains Mono NerdFont";
+    font-family: "Jetbrains Mono NerdFont";
 }
 
 #waybar {
-  background: #303446;
-  color: #f2d5cf;
+    background: #303446;
+    color: #f2d5cf;
 }
+/*--------*/
 
-#clock {
-  color: #f2d5cf;
-}
 
-#tray {
-  padding-left: 4px;
-}
-
-#workspaces button:hover {
-  background-color: transparent;
-}
-
-#workspaces button {
-  color: #f2d5cf;
-  padding-left: 4px;
-  padding-right: 4px;
-  border-radius: 0px;
-}
-
-#workspaces button:hover {
-  background-color: #262626;
-}
-
-#workspaces button.active {
-  color: #ca9ee6;
-}
-
-#window {
-  color: #f2d5cf;
-}
-
-#network {
-  color: #3b82f6;
-  margin-right: 4px;
-}
-
-#pulseaudio {
-  color: #14b8a6;
-  margin-right: 12px;
-}
-
-#cpu {
-  color: #0ea5e9;
-  margin-right: 4px;
-}
-
+/* Left */
 #temperature {
-  color: #eab308;
-  margin-left: 12px;
-  margin-right: 4px;
+    color: #ed8796;
+    margin-left: 12px;
+    margin-right: 6px;
 }
 
 #memory {
-  color: #d946ef;
-  margin-right: 4px;
+    color: #c6a0f6;
+    margin-right: 6px;
+}
+
+#cpu {
+    color: #8aadf4;
+    margin-right: 6px;
+}
+
+#power-profiles-daemon {
+    color: #8bd5ca;
+    margin-right: 20px;
+}
+
+#backlight {
+    color: #eed49f;
+    margin-right: 10px;
+}
+
+#language {
+    color: #b7bdf8;
+}
+/*--------*/
+
+
+/* Workspaces */
+#workspaces button:hover {
+    background-color: transparent;
+}
+
+#workspaces button {
+    color: #f2d5cf;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 0px;
+}
+
+#workspaces button:hover {
+    background-color: #262626;
+}
+
+#workspaces button.active {
+    color: #ca9ee6;
+}
+/*--------*/
+
+
+/* Open apps */
+#tray {
+    color: #f2d5cf;
+}
+/*--------*/
+
+
+/* Middle */
+#window {
+    color: #f2d5cf;
+}
+/*--------*/
+
+
+/* Bluetooth */
+#bluetooth {
+    color: #f2d5cf;
+    margin-right: 16px;
+}
+/*--------*/
+
+/* Volume */
+#pulseaudio {
+    color: #f0c6c6;
+    margin-right: 16px;
+}
+/*--------*/
+
+/* Network */
+#network {
+    color: #f2d5cf;
+    margin-right: 12px;
+}
+
+#network.disconnected {
+    color: #d20f39;
+}
+/*--------*/
+
+/* Battery */
+#upower {
+    color: #f2d5cf;
+}
+
+#upower.charging {
+    color: #eed49f;
+}
+
+#upower.full {
+    color: #a6da95;
+}
+
+/* if not using upower
+#battery {
+    color: #f2d5cf;
+    margin-right: 8px;
+}
+
+#battery.warning { 
+    color: #eed49f; 
+}
+
+#battery.critical { 
+    color: #d20f39; 
+}
+
+#battery.full {
+    color: #a6da95;
+}
+*/
+/*--------*/
+
+
+/* Far-Right */
+#clock {
+    color: #f2d5cf;
 }
 
 #custom-powermenu {
-  color: #f43f5e;
-  margin-right: 4px;
+    color: #d20f39;
+    margin-right: 4px;
 }

@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+nmcli dev rescan wifi
+nmtui
