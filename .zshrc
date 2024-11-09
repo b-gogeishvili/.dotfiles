@@ -17,6 +17,9 @@ export PATH=$PATH:$GEM_BIN_DIR
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+# Scripts
+export PATH=$PATH:/home/odin/.scripts
+
 # Alias?
 alias vim="nvim"
 alias v="nvim"

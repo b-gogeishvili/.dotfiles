@@ -95,21 +95,21 @@
 /* Bluetooth */
 #bluetooth {
     color: #f2d5cf;
-    margin-right: 16px;
+    margin-right: 12px;
 }
 /*--------*/
 
 /* Volume */
 #pulseaudio {
     color: #f2d5cf;
-    margin-right: 22px;
+    margin-right: 12px;
 }
 /*--------*/
 
 /* Network */
 #network {
     color: #f2d5cf;
-    margin-right: 12px;
+    margin-right: 16px;
 }
 
 #network.disconnected {

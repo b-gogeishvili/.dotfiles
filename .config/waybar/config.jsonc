@@ -23,8 +23,8 @@
   ],
 
   "modules-right": [
-    "pulseaudio",
     "network",
+    "pulseaudio",
     "upower",
     "custom/separator",
     "clock",
@@ -103,10 +103,10 @@
     "format-icons": {
         "default": "󰅟 "
     },
-    "exec": "~/.scripts/toggle_vpn.rb exec",
+    "exec": "~/.scripts/toggle-vpn exec",
     "return-type": "json",
     "interval": 1,
-    "on-click": "~/.scripts/toggle_vpn.rb toggle"
+    "on-click": "~/.scripts/toggle-vpn toggle"
   },
   /*--------*/
  
@@ -154,19 +154,12 @@
 
 
   /* Right */
-  /*
   "pulseaudio": {
-    "format": " {volume}%",
-    "scroll-step": 1,
-    "on-click": "pavucontrol"
-  },
-  */
-  "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": " {volume}%",
     "format-muted": "",
     "format-icons": {
-        "headphone": "",
+        "headphone": " ",
         "default": [" ", " "]
     },
     "scroll-step": 1,
@@ -177,21 +170,24 @@
     "format": "{icon}",
     "format-alt": "{ipaddr}/{cidr} {icon}",
     "format-alt-click": "click-right",
-    "format-wifi": "  {essid} ({signalStrength}%)",
-    "format-ethernet": "  {ifname}",
+    "format-wifi": " ",
+    "format-ethernet": " ",
     "format-disconnected": " ",
-    "on-click": "zsh ~/.scripts/network-manager", 
-    "tooltip": false
+    "on-click": "kitty zsh ~/.scripts/network-manager", 
+    "tooltip": true,
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "via {ifname}",
+    "tooltip-format-disconnected": "Disconnected" 
   },
 
   "upower": {
-     "icon-size": 20,
+     "icon-size": 22,
      "hide-if-empty": true,
      "interval": 10,
      "tooltip": true,
      "tooltip-spacing": 20,
      "tooltip-format": " {time}",
-     "format": " {percentage}",
+     "format": "{percentage}",
   },
     
   // Backup

@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+=begin
+  
+  Script for hyprland, that will 
+    configure monitors when docked.
+  
+  Requires matching udev rule:
+
+  1. /etc/udev/rules.d/50-wake-on-device.rules (optional)
+    
+    ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="05e3", ATTRS{idProduct}=="0626", ATTR{power/wakeup}="enabled", ATTR{driver/2-2.4/power/wakeup}="enabled"
+
+  2. /etc/udev/rules.d/99-dock-detection.rules
+    
+    ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="05e3", ATTRS{idProduct}=="0626", RUN+="/home/odin/.scirpts/dock-monitors add"
+
+    ACTION=="remove", SUBSYSTEM=="usb", ATTRS{idVendor}=="05e3", ATTRS{idProduct}=="0626", RUN+="/home/odin/.scirpts/dock-monitors remove"
+
+=end
+
+action = ARGV[0]
+
+if action == "add"
+  `hyprctl keyword monitor DP-4,2560x1440@100,0x0,1`
+  `hyprctl keyword monitor DP-5,1920x1080@100,-1080x-360,1,transform, 1`
+  `hyprctl keyword monitor eDP-1,disable`
+
+else
+  `hyprctl keyword monitor DP-4,disable`
+  `hyprctl keyword monitor DP-5,disable`
+  `hyprctl keyword monitor eDP-1,1920x1200@60,0x0,1.25`
+
+end
