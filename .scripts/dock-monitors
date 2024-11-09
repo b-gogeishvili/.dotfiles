@@ -25,10 +25,12 @@ if action == "add"
   `hyprctl keyword monitor DP-4,2560x1440@100,0x0,1`
   `hyprctl keyword monitor DP-5,1920x1080@100,-1080x-360,1,transform, 1`
   `hyprctl keyword monitor eDP-1,disable`
+  `brightnessctl -sd rgb:kbd_backlight set`
 
 else
   `hyprctl keyword monitor DP-4,disable`
   `hyprctl keyword monitor DP-5,disable`
   `hyprctl keyword monitor eDP-1,1920x1200@60,0x0,1.25`
+  `brightnessctl -rd rgb:kbd_backlight`
 
 end
