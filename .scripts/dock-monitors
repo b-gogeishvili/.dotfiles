@@ -1,36 +1,23 @@
-#!/usr/bin/env ruby
+#!/usr/bin/sh
 
-=begin
-  
-  Script for hyprland, that will 
-    configure monitors when docked.
-  
-  Requires matching udev rule:
+# Function to handle monitor added event
+monitor_added() {
+    hyprctl keyword monitor DP-4,2560x1440@100,0x0,1
+    hyprctl keyword monitor DP-5,1920x1080@100,-1080x-360,1,transform,1
+    hyprctl keyword monitor eDP-1,disable
+}
 
-  1. /etc/udev/rules.d/50-wake-on-device.rules (optional)
-    
-    ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="05e3", ATTRS{idProduct}=="0626", ATTR{power/wakeup}="enabled", ATTR{driver/2-2.4/power/wakeup}="enabled"
+# Function to handle monitor removed event
+monitor_removed() {
+    hyprctl keyword monitor eDP-1,1920x1200@60,0x0,1.25
+}
 
-  2. /etc/udev/rules.d/99-dock-detection.rules
-    
-    ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="05e3", ATTRS{idProduct}=="0626", RUN+="/home/odin/.scirpts/dock-monitors add"
+handle() {
+    case $1 in
+        monitoradded*) monitor_added ;;
+        monitorremoved*) monitor_removed ;;
+    esac
+}
 
-    ACTION=="remove", SUBSYSTEM=="usb", ATTRS{idVendor}=="05e3", ATTRS{idProduct}=="0626", RUN+="/home/odin/.scirpts/dock-monitors remove"
+socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handle "$line"; done
 
-=end
-
-action = ARGV[0]
-
-if action == "add"
-  `hyprctl keyword monitor DP-4,2560x1440@100,0x0,1`
-  `hyprctl keyword monitor DP-5,1920x1080@100,-1080x-360,1,transform, 1`
-  `hyprctl keyword monitor eDP-1,disable`
-  `brightnessctl -sd rgb:kbd_backlight set`
-
-else
-  `hyprctl keyword monitor DP-4,disable`
-  `hyprctl keyword monitor DP-5,disable`
-  `hyprctl keyword monitor eDP-1,1920x1200@60,0x0,1.25`
-  `brightnessctl -rd rgb:kbd_backlight`
-
-end

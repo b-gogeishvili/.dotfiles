@@ -30,18 +30,35 @@ return {
 		config = function()
 			require("tokyonight").setup({
 				style = "storm", -- `storm`, `moon`, `night` and `day`
-				transparent = true, 
-				terminal_colors = true, 
+				transparent = true,
+				terminal_colors = true,
 				styles = {
 					keywords = { italic = false },
-					sidebars = "dark", 
-					floats = "dark", 
+					sidebars = "dark",
+					floats = "dark",
 				},
 			})
 
-			SetUpColorScheme("tokyonight")
-
 		end
 	},
+
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        transparent_background = false,
+        no_italic = true,
+        flavor = "mocha",
+
+        dim_inactive = {
+            enabled = false,
+            shade = "dark",
+            percentage = 0.15,
+        },
+
+        config = function()
+            SetUpColorScheme("catppuccin")
+        end
+    }
 
 }
