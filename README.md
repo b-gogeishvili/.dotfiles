@@ -8,6 +8,6 @@
 - Tiling Compositor: hyprland
 - Alternate Desktop Environment: KDE Plasma
 
-![hyprland_screenshot](.config/.assets/fastfetch.png "hyprlandscr")
-
 ---
+
+![hyprland_screenshot](.config/.assets/fastfetch.png "hyprlandscr")
