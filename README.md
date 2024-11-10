@@ -7,6 +7,7 @@
 - Shell: zsh
 - Tiling Compositor: hyprland
 - Alternate Desktop Environment: KDE Plasma
+- Color Theme: catppuccin mocha (mainly)
 
 ---
 
