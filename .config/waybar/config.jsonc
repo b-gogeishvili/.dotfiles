@@ -10,7 +10,6 @@
     "cpu",
     "power-profiles-daemon",
     "backlight",
-    "hyprland/language",
     "custom/vpn",
     "custom/separator",
     "hyprland/workspaces",
@@ -23,6 +22,7 @@
   ],
 
   "modules-right": [
+    "hyprland/language",
     "network",
     "pulseaudio",
     "upower",
@@ -93,11 +93,6 @@
     }
   },
 
-  "hyprland/language": {
-    "format-en": "en",
-    "format-ka": "ge"
-  },
-
   "custom/vpn": {
     "format": "{icon}",
     "format-icons": {
@@ -154,8 +149,13 @@
 
 
   /* Right */
+  "hyprland/language": {
+    "format-en": "en",
+    "format-ka": "ge"
+  },
+
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}",
     "format-bluetooth": " {volume}%",
     "format-muted": "",
     "format-icons": {
@@ -164,6 +164,9 @@
     },
     "scroll-step": 1,
     "on-click": "pavucontrol",
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%",
+    "tooltip-format-muted": "Muted"
   },
 
   "network": {
@@ -186,7 +189,7 @@
      "interval": 10,
      "tooltip": true,
      "tooltip-spacing": 20,
-     "tooltip-format": " {time}",
+     "tooltip-format": " {percentage} {time}",
      "format": "",
   },
     

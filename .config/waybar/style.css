@@ -34,11 +34,11 @@
 
 #backlight {
     color: #eed49f;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 #language {
-    color: #b7bdf8;
+    color: #f2d5cf;
     margin-right: 12px;
 }
 
@@ -109,7 +109,7 @@
 /* Network */
 #network {
     color: #f2d5cf;
-    margin-right: 16px;
+    margin-right: 12px;
 }
 
 #network.disconnected {

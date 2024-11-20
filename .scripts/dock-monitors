@@ -1,23 +1,12 @@
-#!/usr/bin/sh
+#!/usr/bin/env ruby
 
-# Function to handle monitor added event
-monitor_added() {
-    hyprctl keyword monitor DP-4,2560x1440@100,0x0,1
-    hyprctl keyword monitor DP-5,1920x1080@100,-1080x-360,1,transform,1
-    hyprctl keyword monitor eDP-1,disable
-}
 
-# Function to handle monitor removed event
-monitor_removed() {
-    hyprctl keyword monitor eDP-1,1920x1200@60,0x0,1.25
-}
+output = `xrandr`
 
-handle() {
-    case $1 in
-        monitoradded*) monitor_added ;;
-        monitorremoved*) monitor_removed ;;
-    esac
-}
-
-socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handle "$line"; done
-
+if ARGV[0] == "shutdown"
+  `/usr/bin/ln -sf /home/odin/.dotfiles/.config/hypr/setups/laptop.conf /home/odin/.dotfiles/.config/hypr/hyprland.conf`
+elsif output.scan("DP").count > 1
+  `/usr/bin/ln -sf /home/odin/.dotfiles/.config/hypr/setups/dock.conf /home/odin/.dotfiles/.config/hypr/hyprland.conf`
+else
+  `/usr/bin/ln -sf /home/odin/.dotfiles/.config/hypr/setups/laptop.conf /home/odin/.dotfiles/.config/hypr/hyprland.conf`
+end

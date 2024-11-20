@@ -10,7 +10,6 @@ window {
 button {
     border-radius: 30;
     border-color: black;
-	text-decoration-color: #cdd6f4;
     color: #cdd6f4;
 	background-color: #181825;
 	border-style: solid;
@@ -18,6 +17,7 @@ button {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;
+    margin: 20px;
 }
 
 button:focus, button:active, button:hover {
