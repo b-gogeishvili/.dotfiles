@@ -18,6 +18,10 @@ export PATH=$PATH:$GEM_BIN_DIR
 source ~/.dotfiles/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Syntax Highlighting
 source ~/.dotfiles/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Deno autocompletion
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u
 
 
 # Starship
