@@ -1,0 +1,12 @@
+title = ghostty
+
+font-family = JetBrains Mono
+font-family-bold = JetBrains Mono Bold
+font-family-italic = JetBrains Italic
+font-family-bold-italic = JetBrains Mono Bold Italic
+font-size = 16
+
+background = #1d2021
+background-opacity = 0.8
+theme = nord
+window-padding-color = background
