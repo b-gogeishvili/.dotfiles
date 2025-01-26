@@ -31,4 +31,4 @@ to use on any given machine.
 - Automatic System Configuration
 - Convenient Docking
 - Theme Switching (nord & gruvbox)
-- Automatic Package Installationdd
+- Automatic Package Installation
