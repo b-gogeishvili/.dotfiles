@@ -11,7 +11,7 @@ base or inspiration for your own personalized workflow.
 ## System Overview
 
 - **Laptop**: _Asus Zenbook 14_
-- **OS**: _Arch_
+- **OS**: _Arch Linux_
 - **Editor**: _neovim_
 - **Terminal**: _ghostty_
 - **Shell**: _bash_
