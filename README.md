@@ -1,5 +1,4 @@
-# Dotfiles repository for self
----
+# Dotfiles for self
 
 ## Important Note
 
