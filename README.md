@@ -1,14 +1,11 @@
 # Dotfiles for self
 
-## Important Note
-
-```
 All of my configuration files reside here. 
 Please, note that this is specific to my system and needs, therefore,
 if you try to use this repository directly, some functionality
 may not work properly. Feel free to use my configuration as the
 base or inspiration for your own personalized workflow.
-```
+
 ---
 
 ## System Overview

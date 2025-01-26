@@ -2,7 +2,7 @@ title = ghostty
 
 font-family = JetBrains Mono
 font-family-bold = JetBrains Mono Bold
-font-family-italic = JetBrains Italic
+font-family-italic = JetBrains Mono Italic
 font-family-bold-italic = JetBrains Mono Bold Italic
 font-size = 16
 
