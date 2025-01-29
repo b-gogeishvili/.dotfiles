@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 
-# 1. Replace Wallpaper and Lockscreen
+# Replace Wallpaper
+wallpaper () {
+    read -p "Wallpaper name => " USER_INPUT
 
-hyprpaper="/home/$USER/.dotfiles/temp.txt"
+    hyprpaper="/home/$USER/workspace/personal/temp/hyprpaper.conf"
 
-new_lines=$(cat <<EOF
-New Line 1
-New Line 2
-New Line 3
-EOF
-)
+    for pattern in preload wallpaper; do
+        find="^$pattern =.*"
+        replace="$pattern = /home/$USER/.dotfiles/assets/wallpapers/$USER_INPUT"
+        sed -i "s@$find@$replace@g" $hyprpaper
+    done
 
-sed -i "1,3c$new_lines" "$hyprpaper"
+    systemctl --user restart hyprpaper.service
+}
+
+wallpaper
