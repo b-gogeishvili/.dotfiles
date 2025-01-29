@@ -2,38 +2,48 @@
 {
     "layer": "top",
     "height": 40,
-    "spacing": 8, 
+    "spacing": 8,
 
     "modules-left": [
         "hyprland/workspaces",
-        "custom/media"
-    ],
-    "modules-center": [
-        "sway/window"
-    ],
-    "modules-right": [
-        "mpd",
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
+
+        "custom/separator",
+
+        "temperature",
         "cpu",
         "memory",
-        "temperature",
+
+        "custom/separator",
+
+        "tray"
+    ],
+
+    "modules-center": [
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "hyprland/language",
+        "power-profiles-daemon",
+
+        "custom/separator",
+
         "backlight",
-        "keyboard-state",
-        "sway/language",
+        "wireplumber",
+        "network",
         "battery",
-        "battery#bat2",
+        // "battery#bat2",
         "clock",
-        "tray",
+
+        "custom/separator",
+
         "custom/power"
     ],
 
     // Modules configuration
     // 
     // "",
-    // "",
+    // "",
     // "",
     // "",
     // "",
@@ -42,70 +52,116 @@
     // ""
     //
     //////////////////////////////
-    
+
+    // Decoration
+
+    "custom/separator": {
+        "exec": "echo \"│\"",
+        "format": "{}"
+    },
+
+
+    // Left
+
     "hyprland/workspaces": {
         "format": "{icon}",
         "separate-outputs": false,
-	"active-only": false,
-	"all-outputs": false,
-	"format-icons": {
-	    "1": " ",
-	    "2": "",
-	    "3": "",
-	    "4": "4",
-	    "5": "5",
-            "6": "6",
-	    "7": "7",
-	    "8": "8",
-	    "9": "9"
-	}
-    },
-    
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
+        "active-only": false,
+        "all-outputs": false,
         "format-icons": {
-            "locked": "",
-            "unlocked": ""
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "4",
+            "5": "5",
+                "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9"
         }
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+
+    "temperature": {
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "tooltip": false
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
+
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
+
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
     },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
     },
+
+
+    // Mid
+
+    "hyprland/window": {
+        "max-length": 50,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "  $1",
+            "ghostty": "  ghostty",
+            "(.*) - Code - OSS": "  $1"
+        }
+    },
+
+    
+    // Right
+    
+    "hyprland/language": {
+        "format-en": "en",
+        "format-ka": "ge"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
+
+    "wireplumber": {
+        "format": "{volume}%  {icon}",
+        "format-muted": "",
+        "on-click": "pwvucontrol",
+        "format-icons": ["", "", ""],
+        "max-volume": 100.0
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip": true,
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format-disconnected": "Disconnected ⚠",
+        "tooltip-format-linked": "{ifname} (No IP) "
+    },
+
     "battery": {
         "states": {
             // "good": 95,
@@ -121,48 +177,29 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
+
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
     },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
     },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
+
+
+    // Other
+
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
@@ -175,16 +212,14 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
     }
 }

@@ -36,7 +36,7 @@
 
   /* Tools */
   "custom/separator": {
-    "exec": "echo \" | \"",
+    "exec": "echo \" ┃ \"",
     "format": "{}"
   },
 
@@ -190,7 +190,7 @@
      "tooltip": true,
      "tooltip-spacing": 20,
      "tooltip-format": " {percentage} {time}",
-     "format": "",
+     "format": ""
   },
     
   // Backup
@@ -222,6 +222,6 @@
     "format": "  ",
     "tooltip": false,
     "on-click": "exec wlogout -p layer-shell"
-  },
+  }
   /*--------*/
 }
