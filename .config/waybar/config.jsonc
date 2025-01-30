@@ -23,6 +23,7 @@
     ],
 
     "modules-right": [
+        //"custom/theme",
         "hyprland/language",
         "power-profiles-daemon",
 
@@ -117,6 +118,14 @@
 
     
     // Right
+
+    "custom/vpn": {
+        "todo": "todo"
+    },
+
+    "custom/theme": {
+        "todo": "todo"
+    },
     
     "hyprland/language": {
         "format-en": "en",

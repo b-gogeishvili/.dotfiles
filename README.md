@@ -28,6 +28,6 @@ Main goal is to automate OS installation so that it will be ready
 to use on any given machine.
 
 ### TODO
-- Automatic System Configuration
+- ~~Theme Switching (nord & gruvbox)~~
 - Convenient Docking
-- Theme Switching (nord & gruvbox)
+- Automatic System Configuration
