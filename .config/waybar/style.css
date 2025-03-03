@@ -41,6 +41,7 @@ button:hover {
 #cpu,
 #memory,
 #hypland-language,
+#custom-notification,
 #backlight,
 #wireplumber,
 #network,
@@ -55,7 +56,8 @@ button:hover {
 #network:hover,
 #wireplumber:hover,
 #power-profiles-daemon:hover,
-#clock:hover {
+#clock:hover,
+#custom-notification:hover {
     background-color: @hover-effect;
 }
 /* */

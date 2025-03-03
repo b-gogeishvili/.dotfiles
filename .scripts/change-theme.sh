@@ -96,6 +96,9 @@ gtk() {
     gsettings set org.gnome.desktop.interface gtk-theme "$1"
     gsettings set org.gnome.desktop.interface cursor-theme "Nordzy-cursors"
     gsettings set org.gnome.desktop.interface cursor-size 32
+
+    rm -rf /home/$USER/.config/gtk-4.0/*
+    cp -r /home/$USER/.themes/$1/gtk-4.0/* /home/$USER/.config/gtk-4.0/
 }
 
 # VSCode
@@ -112,6 +115,11 @@ code() {
 }
 EOF
 
+}
+
+# Obsidian
+obsidian() {
+    
 }
 
 # Entry
