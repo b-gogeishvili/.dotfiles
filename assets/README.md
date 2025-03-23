@@ -2,6 +2,7 @@ general
 ---
 ![dark_nature](wallpapers/dark_nature.png "dark_nature")
 ![falling_astronaut](wallpapers/falling_astronaut.jpg "falling_astronaut")
+![car_on_mars](wallpapers/car_on_mars.jpg "car_on_mars")
 
 nord
 ---
@@ -11,6 +12,7 @@ nord
 ![heracles_nord](wallpapers/heracles_nord.png "heracles_nord")
 ![japan_nord](wallpapers/japan_nord.png "japan_nord")
 ![lightning_nord](wallpapers/lightning_nord.jpg "lightning_nord")
+![hollowknight_nord](wallpapers/hollowknight_nord.jpg "hollowknight_nord")
 
 gruvbox
 ---
