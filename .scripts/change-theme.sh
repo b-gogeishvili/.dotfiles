@@ -96,6 +96,7 @@ gtk() {
     gsettings set org.gnome.desktop.interface gtk-theme "$1"
     gsettings set org.gnome.desktop.interface cursor-theme "Nordzy-cursors"
     gsettings set org.gnome.desktop.interface cursor-size 32
+    gsettings set org.gnome.desktop.interface font-name 'Noto Sans 15'
 
     rm -rf /home/$USER/.config/gtk-4.0/*
     cp -r /home/$USER/.themes/$1/gtk-4.0/* /home/$USER/.config/gtk-4.0/
@@ -118,9 +119,9 @@ EOF
 }
 
 # Obsidian
-obsidian() {
+#obsidian() {
     
-}
+#}
 
 # Entry
 read -p "Enter theme [ nord, gruvbox ] => " THEME
