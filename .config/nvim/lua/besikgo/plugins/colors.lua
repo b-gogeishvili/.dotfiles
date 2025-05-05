@@ -19,7 +19,7 @@ return {
 				},
 			})
 
-			-- SetUpColorScheme()
+			SetUpColorScheme()
 		end
 	},
 
@@ -54,11 +54,7 @@ return {
             enabled = false,
             shade = "dark",
             percentage = 0.15,
-        },
-
-        config = function()
-            SetUpColorScheme("catppuccin")
-        end
+        }
     }
 
 }

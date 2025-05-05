@@ -119,9 +119,19 @@ EOF
 }
 
 # Obsidian
-#obsidian() {
-    
-#}
+obsidian() {
+    echo $1
+    cat > /home/$USER/Documents/zettelkasten/.obsidian/appearance.json <<EOF
+{
+  "cssTheme": "$1"
+}
+EOF
+
+}
+
+# Swaync
+
+# Drun
 
 # Entry
 read -p "Enter theme [ nord, gruvbox ] => " THEME
@@ -143,6 +153,7 @@ if [[ $THEME = "gruvbox" ]]; then
     warn="rgba(215,153,33,1)"
 
     vscode_theme="Gruvbox Dark Medium"
+    obsidian_theme="Obsidian gruvbox"
 
 elif [[ $THEME = "nord" ]]; then
     
@@ -161,6 +172,7 @@ elif [[ $THEME = "nord" ]]; then
     warn="rgba(235,203,139,1)"
 
     vscode_theme="Nord"
+    obsidian_theme="Obsidian Nord"
 
 elif [[ $THEME = "toggle" ]]; then
 
@@ -177,5 +189,6 @@ hyprland $border $border_gr $border_inactive
 waybar $bg_color $text_color $hover_effect $redc $greenc $warn
 gtk $gtk_theme
 code "$vscode_theme"
+obsidian "$obsidian_theme"
 
 echo -e "\nSuccess. Restart terminal now!"
