@@ -4,7 +4,7 @@ Description=Configure monitors when docked/undocked on Hyprland
 [Service]
 Type=simple
 Restart=on-failure
-ExecStart=/usr/bin/bash /home/besik/.dotfiles/.scripts/dock.sh
+ExecStart=/usr/bin/bash /home/besik/.dotfiles/.scripts/dock/events.sh
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

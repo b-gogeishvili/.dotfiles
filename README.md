@@ -31,5 +31,5 @@ to use on any given machine.
 ### TODO
 - ~~Theme Switching (nord & gruvbox)~~
 - Snapshotting
-- Convenient Docking
+- ~~Convenient Docking~~
 - Automatic System Configuration
