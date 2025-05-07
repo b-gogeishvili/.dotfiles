@@ -2,7 +2,7 @@
 
 # Listens to monitor events through Hyprland's socket
 
-SCRIPT_PATH="/home/besik/.dotfiles/.scripts/dock"
+SCRIPT_PATH="/home/$USER/.dotfiles/.scripts/dock"
 
 handle() {
   case $1 in

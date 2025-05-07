@@ -14,7 +14,25 @@ lockscreen() {
 }
 
 wallpaper() {
-    read -p "Wallpaper name => " USER_INPUT
+    if [[ $2 == "nord"  ]]; then
+        USER_INPUT=$(gum choose "cat_nord.png" \
+                                "city_nord.jpg" \
+                                "fox_nord.png" \
+                                "heracles_nord.png" \
+                                "hollowknight_nord.jpg" \
+                                "japan_nord.png" \
+                                "lightning_nord.jpg"
+        )
+    else
+        USER_INPUT=$(gum choose "code_gruv.png" \
+                                "husky_gruv.png" \
+                                "mountain_gruv.png" \
+                                "pacman_gruv.png" \
+                                "patterns_gruv.png" \
+                                "ricky_gruv.png" \
+                                "text_gruv.png"
+        )
+    fi
 
     hyprpaper="/home/$USER/.dotfiles/.config/hypr/hyprpaper.conf"
 
@@ -120,7 +138,6 @@ EOF
 
 # Obsidian
 obsidian() {
-    echo $1
     cat > /home/$USER/Documents/zettelkasten/.obsidian/appearance.json <<EOF
 {
   "cssTheme": "$1"
@@ -134,7 +151,7 @@ EOF
 # Drun
 
 # Entry
-read -p "Enter theme [ nord, gruvbox ] => " THEME
+THEME=$(gum choose "nord" "gruvbox")
 
 if [[ $THEME = "gruvbox" ]]; then
 
@@ -183,7 +200,7 @@ else
     exit 1
 fi
 
-wallpaper $text_color
+wallpaper $text_color $THEME
 tty $ghostty_theme
 hyprland $border $border_gr $border_inactive
 waybar $bg_color $text_color $hover_effect $redc $greenc $warn

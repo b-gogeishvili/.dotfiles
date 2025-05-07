@@ -8,7 +8,7 @@ font-size = 18
 
 background = #1d2021
 background-opacity = 0.8
-theme = nord
+theme = GruvboxDark
 window-padding-color = background
 
 gtk-titlebar = false

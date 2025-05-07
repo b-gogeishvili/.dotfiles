@@ -5,7 +5,7 @@ SAVEHIST=1000
 setopt autocd extendedglob nomatch notify
 unsetopt beep
 bindkey -v
-zstyle :compinstall filename '/home/besik/.zshrc'
+zstyle :compinstall filename "/home/$USER/.zshrc"
 autoload -Uz compinit
 compinit
 
