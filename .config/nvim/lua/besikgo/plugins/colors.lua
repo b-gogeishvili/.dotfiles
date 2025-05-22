@@ -19,7 +19,7 @@ return {
 				},
 			})
 
-			SetUpColorScheme()
+			SetUpColorScheme("catppuccin")
 		end
 	},
 

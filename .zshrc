@@ -50,6 +50,7 @@ fi
 
 alias v="nvim"
 alias sv="sudo nvim"
+alias vim="nvim"
 
 alias ll="ls -alF"
 alias la="ls -A"
