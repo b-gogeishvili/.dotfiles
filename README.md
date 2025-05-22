@@ -10,26 +10,11 @@ base or inspiration for your own personalized workflow.
 
 ## Overview
 
-- **Laptop**: _Asus Zenbook 14_
-- **OS**: _Arch Linux_
-- **Filesystem**: _btrfs_
+- **Laptop**: _MacBook Pro M3_
+- **OS**: _MacOS_
+- **Filesystem**: _APFS_
 - **Editor**: _neovim_
 - **Terminal**: _ghostty_
-- **Shell**: _bash_
-- **Window Manager**: _hyprland_
-- **Color Theme**: _nord, gruvbox_
-
-![hyprland_screenshot](assets/fastfetch.png "hyprlandscr")
-
----
-
-## Future Plans
-I aim to seamlessly configure my Linux systems without too much hassle.
-Main goal is to automate OS configuration so that it will be ready
-to use on any given machine.
-
-### TODO
-- ~~Theme Switching (nord & gruvbox)~~
-- Snapshotting
-- ~~Convenient Docking~~
-- Automatic System Configuration
+- **Shell**: _zsh_
+- **Window Manager**: _Aerospace_
+- **Color Theme**: _Catppuccin Mocha_ 
