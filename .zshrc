@@ -56,6 +56,6 @@ alias ll="ls -alF"
 alias la="ls -A"
 alias l="ls -CF"
 
-alias config="git -C /home/odin/.dotfiles"
+alias config="git -C $HOME/.dotfiles"
 alias pandoc="pandoc -s -V colorlinks=true -V linkcolor=red -V urlcolor=blue \
 -V toccolor=gray --highlight-style=breezedark -V geometry:margin=1in"

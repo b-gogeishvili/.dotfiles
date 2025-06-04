@@ -9,52 +9,16 @@ end
 
 return {
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-			require('rose-pine').setup({
-				disable_background = true,
-				styles = {
-					italic = false,
-				},
-			})
-
-			SetUpColorScheme("catppuccin")
-		end
+		"shaunsingh/nord.nvim",
+		name = "nord",
 	},
 
 	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		opts = {},
+		"LazyVim/LazyVim",
+		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
-				style = "storm", -- `storm`, `moon`, `night` and `day`
-				transparent = true,
-				terminal_colors = true,
-				styles = {
-					keywords = { italic = false },
-					sidebars = "dark",
-					floats = "dark",
-				},
-			})
-
+			SetUpColorScheme("nord")
 		end
-	},
-
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-        transparent_background = false,
-        no_italic = true,
-        flavor = "mocha",
-
-        dim_inactive = {
-            enabled = false,
-            shade = "dark",
-            percentage = 0.15,
-        }
-    }
-
+	}
 }
+
