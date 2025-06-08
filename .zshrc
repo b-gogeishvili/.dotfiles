@@ -36,6 +36,8 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $ZSH/oh-my-zsh.sh
 
+source <(kubectl completion zsh)
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -59,3 +61,16 @@ alias l="ls -CF"
 alias config="git -C $HOME/.dotfiles"
 alias pandoc="pandoc -s -V colorlinks=true -V linkcolor=red -V urlcolor=blue \
 -V toccolor=gray --highlight-style=breezedark -V geometry:margin=1in"
+
+alias zt="cd ~/Documents/zettelkasten"
+alias ws="cd ~/workspace"
+alias p="cd ~/personal"
+alias rp="cd ~/workspace/repos"
+
+alias k="kubectl"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/bgogeishvili/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+export XDG_CONFIG_HOME=$HOME/.config
