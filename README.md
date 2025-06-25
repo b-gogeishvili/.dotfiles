@@ -23,10 +23,9 @@ base or inspiration for your own personalized workflow.
 
 ---
 
-## Future Plans
-I aim to seamlessly configure my Linux systems without too much hassle.
-Main goal is to automate OS configuration so that it will be ready
-to use on any given machine.
+## Goals
+The goal of this repository is to streamline the configuration of my UNIX systems with minimal manual effort.
+It focuses on automating OS setup so that any machine can be quickly brought to a ready-to-use state.
 
 ### TODO
 - ~~Theme Switching (nord & gruvbox)~~

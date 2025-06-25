@@ -1,9 +1,9 @@
-@define-color bg-color rgba(40,40,40,1);
-@define-color text-color rgba(235,219,178,1);
+@define-color bg-color rgba(46,52,64,1);
+@define-color text-color rgba(236,239,244,1);
 @define-color hover-effect rgba(0,0,0,0.2);
-@define-color redc rgba(204,35,29,1);
-@define-color greenc rgba(152,151,26,1);
-@define-color warn rgba(215,153,33,1);
+@define-color redc rgba(191,97,106,1);
+@define-color greenc rgba(163,190,140,1);
+@define-color warn rgba(235,203,139,1);
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
