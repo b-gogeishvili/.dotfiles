@@ -153,7 +153,6 @@ automatically-unhide-macos-hidden-apps = false
     # '''
 
     cmd-enter = '''exec-and-forget open -n -a Ghostty'''
-    cmd-b = '''exec-and-forget open -n -a "Microsoft Edge"'''
     cmd-o = '''exec-and-forget open -n -a "Obsidian"'''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout

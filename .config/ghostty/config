@@ -5,7 +5,7 @@ font-family-bold-italic = Noto Sans Bold Italic
 font-size = 20
 
 background = #1d2021
-background-opacity = 0.90
+background-opacity = 0.85
 theme = catppuccin-mocha 
 window-padding-color = background
 

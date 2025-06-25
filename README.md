@@ -1,10 +1,6 @@
-# Dotfiles for self
+# MacOS Configuration Files
 
-All of my configuration files reside here. 
-Note that this is specific to my system and needs, therefore,
-if you try to use this repository directly, some functionality
-may not work properly. It will be best used as the
-base or inspiration for your own personalized workflow.
+All of my configuration files are stored here. These dotfiles are tailored to my specific system and workflow, so they may not work out-of-the-box on other setups. Feel free to use them as a reference or starting point for your own configuration.
 
 ---
 

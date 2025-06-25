@@ -38,6 +38,8 @@ source $ZSH/oh-my-zsh.sh
 
 source <(kubectl completion zsh)
 
+export XDG_CONFIG_HOME=$HOME/.config
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -52,7 +54,6 @@ fi
 
 alias v="nvim"
 alias sv="sudo nvim"
-alias vim="nvim"
 
 alias ll="ls -alF"
 alias la="ls -A"
@@ -65,12 +66,11 @@ alias pandoc="pandoc -s -V colorlinks=true -V linkcolor=red -V urlcolor=blue \
 alias zt="cd ~/Documents/zettelkasten"
 alias ws="cd ~/workspace"
 alias p="cd ~/personal"
-alias rp="cd ~/workspace/repos"
+alias repos="cd ~/workspace/repos"
+alias dots="cd ~/.dotfiles"
 
 alias k="kubectl"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/bgogeishvili/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-export XDG_CONFIG_HOME=$HOME/.config
