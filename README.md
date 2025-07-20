@@ -13,9 +13,8 @@ base or inspiration for your own personalized workflow.
 - **Filesystem**: _btrfs_
 - **Editor**: _neovim_
 - **Terminal**: _ghostty_
-- **Shell**: _bash_
+- **Shell**: _zsh_
 - **Window Manager**: _hyprland_
-- **Color Theme**: _nord, gruvbox_
 
 ![hyprland_screenshot](assets/fastfetch.png "hyprlandscr")
 

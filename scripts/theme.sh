@@ -23,7 +23,7 @@ wallpaper() {
                                 "japan_nord.png" \
                                 "lightning_nord.jpg"
         )
-    else
+    elif [[ $2 == "gruvbox"  ]]; then
         USER_INPUT=$(gum choose "code_gruv.png" \
                                 "husky_gruv.png" \
                                 "mountain_gruv.png" \
@@ -32,6 +32,8 @@ wallpaper() {
                                 "ricky_gruv.png" \
                                 "text_gruv.png"
         )
+    elif [[ $2 == "custom" ]]; then
+        USER_INPUT=$(gum choose "")
     fi
 
     hyprpaper="/home/$USER/.dotfiles/.config/hypr/hyprpaper.conf"
@@ -118,6 +120,7 @@ gtk() {
 
     rm -rf /home/$USER/.config/gtk-4.0/*
     cp -r /home/$USER/.themes/$1/gtk-4.0/* /home/$USER/.config/gtk-4.0/
+    nautilus --quit
 }
 
 # VSCode
@@ -150,8 +153,12 @@ EOF
 
 # Drun
 
+# Neovim
+
+# ?
+
 # Entry
-THEME=$(gum choose "nord" "gruvbox")
+THEME=$(gum choose "nord" "gruvbox" "custom")
 
 if [[ $THEME = "gruvbox" ]]; then
 
@@ -191,12 +198,27 @@ elif [[ $THEME = "nord" ]]; then
     vscode_theme="Nord"
     obsidian_theme="Obsidian Nord"
 
-elif [[ $THEME = "toggle" ]]; then
+elif [[ $THEME = "custom" ]]; then
+    
+    text_color="rgba(eceff4ee)"
+    ghostty_theme="nord"
+    border="rgba(d8dee9ee)"
+    border_gr="rgba(4c566aee)"
+    border_inactive="rgba(2e3440aa)"
+    gtk_theme="Nordic"
 
-    echo "todo"
+    bg_color="rgba(46,52,64,1)"
+    text_color="rgba(236,239,244,1)"
+    hover_effect="rgba(0,0,0,0.2)"
+    redc="rgba(191,97,106,1)"
+    greenc="rgba(163,190,140,1)"
+    warn="rgba(235,203,139,1)"
+
+    vscode_theme="Nord"
+    obsidian_theme="Atom"
 
 else
-    echo "Invalid theme name, choose from => [ nord, gruvbox ]"
+    echo "Invalid theme name, choose from => [ nord, gruvbox, custom ]"
     exit 1
 fi
 

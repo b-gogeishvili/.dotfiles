@@ -1,3 +1,0 @@
-ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="2109", ATTRS{idProduct}=="0817", RUN+="/usr/bin/ln -sf /home/odin/.dotfiles/.config/hypr/setups/dock.conf /home/odin/.dotfiles/.config/hypr/hyprland.conf"
-
-ACTION=="remove", SUBSYSTEM=="usb", ATTRS{idVendor}=="2109", ATTRS{idProduct}=="0817", RUN+="/usr/bin/ln -sf /home/odin/.dotfiles/.config/hypr/setups/laptop.conf /home/odin/.dotfiles/.config/hypr/hyprland.conf"
