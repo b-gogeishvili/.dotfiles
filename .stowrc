@@ -1,8 +1,1 @@
 --target=~/.config
---ignore='.stowrc'
---ignore='install.sh'
---ignore='README.md'
---ignore='scripts'
---ignore='systemd'
---ignore='themes'
---ignore='readme'
