@@ -1,0 +1,19 @@
+font-family = Noto Sans Regular
+font-family-bold = Noto Sans Bold
+font-family-italic = Noto Sans Italic
+font-family-bold-italic = Noto Sans Bold Italic
+font-size = 20
+
+background = #1d2021
+background-opacity = 0.85
+theme = catppuccin-mocha 
+window-padding-color = background
+
+gtk-titlebar = false
+window-padding-x = 8
+window-padding-y = 10
+
+shell-integration-features = sudo
+
+clipboard-read = allow
+clipboard-write = allow
