@@ -29,10 +29,17 @@ zstyle ':omz:update' mode auto # update automatically without asking
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git)
+#
+if [[ "$(uname)" == "Darwin" ]]; then
+    plugins=(git)
 
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+elif [[ "$(uname)" == "Linux" ]]; then
+    plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+
+fi
 
 source $ZSH/oh-my-zsh.sh
 

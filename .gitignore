@@ -1,1 +1,2 @@
-config/tmux/plugins
+config/shared/tmux/plugins
+config/shared/zsh/.zcomp*
