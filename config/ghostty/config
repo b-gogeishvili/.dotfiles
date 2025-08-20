@@ -1,3 +1,5 @@
+title = ghostty
+
 font-family = Noto Sans Regular
 font-family-bold = Noto Sans Bold
 font-family-italic = Noto Sans Italic
@@ -6,7 +8,7 @@ font-size = 20
 
 background = #1d2021
 background-opacity = 0.85
-theme = catppuccin-mocha 
+theme = rose-pine
 window-padding-color = background
 
 gtk-titlebar = false
