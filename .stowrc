@@ -1,4 +1,5 @@
 --target=~
+--ignore='.stowrc'
 --ignore='install.sh'
 --ignore='assets'
 --ignore='scripts'
