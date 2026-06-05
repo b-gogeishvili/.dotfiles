@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-# Variables
 enable_battery=false
 battery_charging=false
 battery_percentage=0
 
-battery_empty=" "
-battery_low=" "
-battery_mid=" "
-battery_good=" "
-battery_full=" "
+battery_empty="󰁻"
+battery_low="󰁼"
+battery_mid="󰁾"
+battery_good="󰂀"
+battery_full="󰁹"
+
 
 # Check availability
 for battery in /sys/class/power_supply/*BAT*; do
@@ -25,10 +25,10 @@ done
 
 # Output
 if [[ $enable_battery == true ]]; then
-  echo -n "$battery_percentage"%
+  echo -n "$battery_percentage% "
 
   if [[ $battery_charging == true ]]; then
-    echo -n " "
+    echo -n "󰂄"
   else
     if [[ $battery_percentage -le 15 ]]; then
       echo -n "$battery_empty"
@@ -45,4 +45,3 @@ if [[ $enable_battery == true ]]; then
 
 fi
 
-echo ''
