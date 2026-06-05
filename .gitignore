@@ -1,3 +1,1 @@
-config/tmux/plugins
-config/zsh/.zcomp*
-config/zsh/.zsh_history
+.config/tmux/plugins
