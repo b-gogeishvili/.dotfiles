@@ -1,7 +1,7 @@
 title = ghostty
 
 font-family = Noto Sans Mono
-font-size = 16
+font-size = 15
 
 background-opacity = 0.90
 theme = Catppuccin Mocha

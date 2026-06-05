@@ -2,8 +2,8 @@
 
 set -e
 
-WALLS=($HOME/.dotfiles/themes/wallpapers/*)
-HYPR="$HOME/.dotfiles/dots/.config/hypr"
+WALLS=($HOME/.dotfiles/assets/themes/wallpapers/*)
+HYPR="$HOME/.dotfiles/.config/hypr"
 
 refresh() {
     systemctl --user restart waybar
