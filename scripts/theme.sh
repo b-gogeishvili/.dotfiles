@@ -2,7 +2,7 @@
 
 set -e
 
-WALLS=($HOME/.dotfiles/assets/themes/wallpapers/*)
+WALLS=($HOME/.dotfiles/assets/wallpapers/*)
 HYPR="$HOME/.dotfiles/.config/hypr"
 
 refresh() {

@@ -10,13 +10,16 @@ for pkg in sddm sddm-silent-theme; do
     fi
 done
 
-# Create symbolic links
-ln -s $DOTS_PATH/hades.conf $SDDM_PATH/configs/hades.conf
-ln -s $DOTS_PATH/backgrounds/*.mp4 $SDDM_PATH/backgrounds/
-echo "created links!"
+# Copy config file
+sudo cp $DOTS_PATH/custom.conf $SDDM_PATH/configs/custom.conf
+echo "copied config!"
 
-if [[ $(tail -n1 $SDDM_PATH/metadata.desktop) != "ConfigFile=configs/hades.conf" ]]; then
-    echo "ConfigFile=configs/hades.conf" >> $SDDM_PATH/metadata.desktop
+# Decided not add mp4 files in my git repository
+# Add background videos/images manually to $SDDM_PATH/backgrounds
+# sudo cp $DOTS_PATH/backgrounds/*.mp4 $SDDM_PATH/backgrounds/
+
+if [[ $(tail -n1 $SDDM_PATH/metadata.desktop) != "ConfigFile=configs/custom.conf" ]]; then
+    echo "ConfigFile=configs/custom.conf" >> $SDDM_PATH/metadata.desktop
 fi
 
 echo "done!"
