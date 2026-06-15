@@ -1,11 +1,3 @@
-# Place a copy of this config to ~/.aerospace.toml
-# After that, you can edit ~/.aerospace.toml to your liking
-
-# You can use it to add commands that run after login to macOS user session.
-# 'start-at-login' needs to be 'true' for 'after-login-command' to work
-# Available commands: https://nikitabobko.github.io/AeroSpace/commands after-login-command = []
-
-# You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
@@ -40,59 +32,51 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-
-# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
-# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
-# Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
     if.app-id = 'com.mitchellh.ghostty'
-    run = 'move-node-to-workspace T' # mnemonics T - Terminal
+    run = 'move-node-to-workspace T'
+
+[[on-window-detected]]
+    if.app-id = 'dev.zed.Zed'
+    run = 'move-node-to-workspace Z'
 
 [[on-window-detected]]
     if.app-id = 'app.zen-browser.zen'
-    run = 'move-node-to-workspace P' # mnemonics P - Personal
+    run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.edgemac'
-    run = 'move-node-to-workspace W' # mnemonics W - Web Browser
+    run = 'move-node-to-workspace W'
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.rdc.macos'
-    run = 'move-node-to-workspace S' # mnemonics S - SSH for Windows
+    run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.teams2'
-    run = 'move-node-to-workspace C' # mnemonics C - Chat 
+    run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.Outlook'
-    run = 'move-node-to-workspace E' # mnemonics E - E-Mail 
+    run = 'move-node-to-workspace E'
 
 [[on-window-detected]]
     if.app-id = 'md.obsidian'
-    run = 'move-node-to-workspace N' # mnemonics N - Notes
+    run = 'move-node-to-workspace O'
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.VSCode'
-    run = 'move-node-to-workspace V' # mnemonics V - VSCode
-
-[[on-window-detected]]
-    if.app-id = 'com.spotify.client'
-    run = 'move-node-to-workspace M' # mnemonics M - Music
+    run = 'move-node-to-workspace V'
 
 [[on-window-detected]]
     if.app-id = 'com.apple.iBooksX'
-    run = 'move-node-to-workspace R' # mnemonics R - Read
-
-[[on-window-detected]]
-    if.app-id = 'com.hnc.Discord'
-    run = 'move-node-to-workspace D' # mnemonics D - Discord 
+    run = 'move-node-to-workspace R'
 
 [[on-window-detected]]
     if.app-id = 'com.postmanlabs.mac'
-    run = 'move-node-to-workspace A' # mnemonics A - Api
+    run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
     if.app-id = 'com.apple.Notes'
@@ -100,6 +84,22 @@ automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
     if.app-id = 'com.apple.reminders'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.TextEdit'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.ActivityMonitor'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.iCal'
     run = 'layout floating'
 
 # Possible values: (qwerty|dvorak|colemak)
@@ -156,8 +156,16 @@ automatically-unhide-macos-hidden-apps = false
     # end tell'
     # '''
 
-    cmd-enter = '''exec-and-forget open -n -a Ghostty'''
+    cmd-h = [] # Disable "hide application"
+    cmd-alt-h = [] # Disable "hide others"
+    cmd-enter = '''exec-and-forget CUR_WS=$(aerospace list-workspaces --focused) &&
+        osascript -e 'tell application "Ghostty"
+            new window
+            activate
+        end tell' &&
+        aerospace move-node-to-workspace --focus-follows-window "$CUR_WS"'''
     cmd-o = '''exec-and-forget open -n -a "Obsidian"'''
+    alt-shift-s = 'exec-and-forget screencapture -i -c'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
@@ -187,8 +195,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-5 = 'workspace 5'
     alt-6 = 'workspace 6'
     alt-7 = 'workspace 7'
-    alt-8 = 'workspace 8'
-    alt-9 = 'workspace 9'
     alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
     alt-b = 'workspace B'
     alt-c = 'workspace C'
@@ -209,7 +215,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-v = 'workspace V'
     alt-w = 'workspace W'
     alt-x = 'workspace X'
-    alt-y = 'workspace Y'
     alt-z = 'workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -219,9 +224,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-4 = 'move-node-to-workspace 4'
     alt-shift-5 = 'move-node-to-workspace 5'
     alt-shift-6 = 'move-node-to-workspace 6'
-    alt-shift-7 = 'move-node-to-workspace 7'
-    alt-shift-8 = 'move-node-to-workspace 8'
-    alt-shift-9 = 'move-node-to-workspace 9'
     alt-shift-a = 'move-node-to-workspace A'
     alt-shift-b = 'move-node-to-workspace B'
     alt-shift-c = 'move-node-to-workspace C'
@@ -236,7 +238,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-p = 'move-node-to-workspace P'
     alt-shift-q = 'move-node-to-workspace Q'
     alt-shift-r = 'move-node-to-workspace R'
-    alt-shift-s = 'move-node-to-workspace S'
     alt-shift-t = 'move-node-to-workspace T'
     alt-shift-u = 'move-node-to-workspace U'
     alt-shift-v = 'move-node-to-workspace V'
