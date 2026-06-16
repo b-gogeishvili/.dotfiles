@@ -1,0 +1,41 @@
+@import "./colors.rasi"
+
+* {
+    background-color: @background;
+    border-radius: 8px;
+}
+
+window {
+    transparency: 0.7;
+    width: 50%;
+}
+
+scrollbar {
+    handle-color: @color4;
+}
+
+entry {
+    placeholder: "...";
+    cursor: text;
+    cursor-width: 3px;
+    hide-cursor-on-empty: true;
+}
+
+element {
+    orientation: horizontal;
+    children: [ element-text, element-icon ];
+    spacing: 5px;
+}
+
+entry, element-text {
+    text-color: @foreground;
+}
+
+element-icon {
+    size: 50px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+

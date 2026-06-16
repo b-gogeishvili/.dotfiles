@@ -38,6 +38,7 @@ palette = "dark16"
 [templates]
 hypr = { src = "hyprland-colors.conf", dst = "~/.config/hypr/hyprconf/colors.conf" }
 waybar = { src = "waybar-colors.css", dst = "~/.config/waybar/colors.css" }
+rofi = { src = "rofi-colors.rasi", dst = "~/.config/rofi/themes/colors.rasi" }
 
 [hooks]
 # Run commands when wallust is invoked. Useful to avoid scripting.
