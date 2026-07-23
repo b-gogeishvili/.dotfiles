@@ -48,7 +48,7 @@
             "tooltip-format-disconnected": "Error",
             "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
             "tooltip-format-ethernet": "{ifname} 🖧 ",
-            "on-click": "uwsm app -- ghostty --title='nmtui' -e nmtui"
+            "on-click": "uwsm app -- ghostty --theme='Duskfox' --title='nmtui' -e nmtui"
         },
 
         "wireplumber": {
