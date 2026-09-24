@@ -1,0 +1,10 @@
+[Unit]
+Description=Hide Waybar when fullscreen and toggle on cursor position
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/bin/bash /home/dante/.dotfiles/scripts/bar.sh
+
+[Install]
+WantedBy=default.target

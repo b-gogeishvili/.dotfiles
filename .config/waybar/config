@@ -1,7 +1,9 @@
 {
-        "layer": "top",
+        "layer": "overlay",
         "position": "top",
         "reload_style_on_change": true,
+        "on-sigusr1": "show",
+        "on-sigusr2": "hide",
         "modules-left": ["hyprland/workspaces", "tray"],
         "modules-center": ["clock"],
         "modules-right": ["group/expand", "bluetooth", "backlight", "network", "wireplumber", "battery", "custom/notification"],
