@@ -78,3 +78,8 @@ alias dots="cd ~/dotfiles"
 
 alias k="kubectl"
 
+source /Users/bgogeishvili/.fudo_function.sh
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/bgogeishvili/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

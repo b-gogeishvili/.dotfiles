@@ -43,8 +43,8 @@ automatically-unhide-macos-hidden-apps = false
     run = 'move-node-to-workspace Z'
 
 [[on-window-detected]]
-    if.app-id = 'app.zen-browser.zen'
-    run = 'move-node-to-workspace B'
+    if.app-id = 'org.mozilla.firefox'
+    run = 'move-node-to-workspace F'
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.edgemac'
@@ -102,6 +102,10 @@ automatically-unhide-macos-hidden-apps = false
     if.app-id = 'com.apple.iCal'
     run = 'layout floating'
 
+[[on-window-detected]]
+    if.app-id = 'com.cisco.secureclient.gui'
+    run = 'layout floating'
+
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
@@ -115,6 +119,11 @@ automatically-unhide-macos-hidden-apps = false
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+[workspace-to-monitor-force-assignment]
+    1 = 'secondary'
+    2 = 'secondary'
+    3 = 'secondary'
+
 [gaps]
     inner.horizontal = 7
     inner.vertical =   7
