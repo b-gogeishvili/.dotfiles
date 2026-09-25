@@ -1,5 +1,5 @@
 [[ $- != *i* ]] && return
-eval "$(starship init bash)"
+eval "$(/home/besik/.local/bin/starship init bash)"
 
 PATH="$HOME/.local/bin:$PATH"
 
@@ -10,6 +10,7 @@ alias rhw='systemctl --user restart hyprpaper'
 alias rdns='sudo systemctl restart systemd-resolved'
 
 alias v="nvim"
+alias vim="nvim"
 alias sv="sudo nvim"
 
 alias ll="ls -alF"
