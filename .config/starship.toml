@@ -3,6 +3,7 @@
 add_newline = false
 
 format = """
+$container\
 $username\
 $hostname\
 $kubernetes\
@@ -75,7 +76,7 @@ disabled = true
 disabled = true
 
 [container]
-disabled = true
+disabled = false
 
 [shell]
 disabled = true

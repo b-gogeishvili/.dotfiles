@@ -1,7 +1,8 @@
 [[ $- != *i* ]] && return
-eval "$(/home/besik/.local/bin/starship init bash)"
 
 PATH="$HOME/.local/bin:$PATH"
+
+eval "$(starship init bash)"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
