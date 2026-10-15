@@ -1,0 +1,57 @@
+### Palette ###################################################################
+set $bg       #282828
+set $bg0_h    #1d2021
+set $bg1      #3c3836
+set $bg2      #504945
+set $bg3      #665c54
+set $bg4      #7c6f64
+set $fg       #ebdbb2
+set $fg4      #a89984
+set $gray     #928374
+
+set $red      #cc241d
+set $red_b    #fb4934
+set $green    #98971a
+set $green_b  #b8bb26
+set $yellow   #d79921
+set $yellow_b #fabd2f
+set $blue     #458588
+set $blue_b   #83a598
+set $purple   #b16286
+set $purple_b #d3869b
+set $aqua     #689d6a
+set $aqua_b   #8ec07c
+set $orange   #d65d0e
+set $orange_b #fe8019
+
+### Font ######################################################################
+font pango:monospace 12
+
+### Borders & gaps ############################################################
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders --i3 smart
+smart_borders on
+
+gaps inner 6
+gaps outer 2
+smart_gaps on
+
+titlebar_padding 6 3
+titlebar_border_thickness 1
+
+### Window colors #############################################################
+# class                  border    bg        text      indicator  child_border
+client.focused           $bg4      $bg3      $fg       $gray      $bg4
+client.focused_inactive  $bg2      $bg2      $fg4      $bg3       $bg2
+client.focused_tab_title $bg3      $bg3      $fg       $bg3       $bg3
+client.unfocused         $bg1      $bg1      $gray     $bg1       $bg1
+client.urgent            $red      $red      $fg       $red_b     $red
+client.placeholder       $bg       $bg       $fg4      $bg        $bg
+client.background        $bg
+
+### Focus behaviour ###########################################################
+focus_follows_mouse yes
+mouse_warping container
+focus_on_window_activation smart
+workspace_auto_back_and_forth yes

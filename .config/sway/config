@@ -38,11 +38,7 @@ output eDP-1 {
 
 ### Appearance
 #
-default_border pixel 2
-default_floating_border pixel 2
-
-bar {
-}
+include ~/.config/sway/themes/gruvbox
 
 ### Idle configuration
 #
