@@ -30,15 +30,15 @@ font pango:monospace 12
 ### Borders & gaps ############################################################
 default_border pixel 1
 default_floating_border pixel 1
-hide_edge_borders --i3 smart
-smart_borders on
+# hide_edge_borders --i3 smart
+# smart_borders on
 
-gaps inner 6
-gaps outer 2
-smart_gaps on
+gaps inner 0
+gaps outer 0
+smart_gaps off
 
-titlebar_padding 6 3
-titlebar_border_thickness 1
+# titlebar_padding 6 3
+# titlebar_border_thickness 1
 
 ### Window colors #############################################################
 # class                  border    bg        text      indicator  child_border

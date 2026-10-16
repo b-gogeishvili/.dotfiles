@@ -90,11 +90,3 @@ disabled = true
 [env_var]
 disabled = true
 
-[golang]
-style = 'blue'
-symbol = ' '
-
-[python]
-style = 'yellow'
-symbol = '  ' 
-
